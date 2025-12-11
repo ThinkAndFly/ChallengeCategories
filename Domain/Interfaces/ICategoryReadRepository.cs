@@ -5,6 +5,6 @@ namespace Challenge.Domain.Interfaces
 {
     public interface ICategoryReadRepository
     {
-        public List<Category> GetList();
+        public Task<List<Category>> GetListAsync();
     }
 }

@@ -6,10 +6,9 @@ namespace Challenge.Application.Categories
 {
     public class CategoryApplication(ICategoryReadRepository readRepository) : ICategoryApplication
     {
-
-        public string GetProperiesByCategoryId(int categoryId)
+        public async Task<string> GetProperiesByCategoryId(int categoryId)
         {
-            List<Category> categories = readRepository.GetList();
+            List<Category> categories = await readRepository.GetListAsync();
             Category? category = categories.Find(c => c.CaterogyId == categoryId);
 
             if (category == null)
@@ -24,6 +23,12 @@ namespace Challenge.Application.Categories
             builder.Append(nameof(category.Keyword)).Append('=').Append(keyword);
 
             return builder.ToString();
+        }
+
+        public async Task<List<int>> GetCategoriesByLevel(int level)
+        {
+            List<Category> categories = await readRepository.GetListAsync();
+            return [];
         }
 
         private string FindKeyword(Category category, List<Category> Categories)
@@ -41,7 +46,7 @@ namespace Challenge.Application.Categories
 
             var parent = Categories.Find(c => c.CaterogyId == category.ParentCaterogyId);
 
-            //if parent is not  found, return empty.
+            //if parent is not found, return empty.
             if (parent == null) 
                 return string.Empty;
 

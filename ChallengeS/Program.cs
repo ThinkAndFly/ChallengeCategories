@@ -28,7 +28,7 @@ if (!int.TryParse(input, out var categoryId))
 
 try
 {
-    var properties = categoryApplication.GetProperiesByCategoryId(categoryId);
+    var properties = await categoryApplication.GetProperiesByCategoryId(categoryId);
     Console.WriteLine(properties);
 }
 catch (Exception ex)

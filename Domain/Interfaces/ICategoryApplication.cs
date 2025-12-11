@@ -2,6 +2,6 @@
 {
     public interface ICategoryApplication
     {
-        public string GetProperiesByCategoryId(int categoryId);
+        public Task<string> GetProperiesByCategoryId(int categoryId);
     }
 }

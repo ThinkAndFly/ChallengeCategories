@@ -10,7 +10,7 @@ namespace Challenge.Test.Categories
     public sealed class TestCategory
     {
         [TestMethod]
-        public void GetProperiesByCategoryId()
+        public async Task GetProperiesByCategoryId()
         {
             var categories = new List<Category>
             {
@@ -25,13 +25,13 @@ namespace Challenge.Test.Categories
 
             var fake = CreateFakeRepository(categories);
 
-            var result = fake.GetProperiesByCategoryId(100);
+            var result = await fake.GetProperiesByCategoryId(100);
 
             Assert.AreEqual("ParentCaterogyId=-1, Name=Business, Keyword=Money", result);
         }
 
         [TestMethod]
-        public void GetProperiesByCategoryId_WithKeywordsFromParent()
+        public async Task GetProperiesByCategoryId_WithKeywordsFromParent()
         {
             var categories = new List<Category>
             {
@@ -53,17 +53,17 @@ namespace Challenge.Test.Categories
 
             var fake = CreateFakeRepository(categories);
 
-            var result = fake.GetProperiesByCategoryId(200);
+            var result = await fake.GetProperiesByCategoryId(200);
 
             Assert.AreEqual("ParentCaterogyId=100, Name=Taxation, Keyword=Money", result);
         }
 
         [TestMethod]
-        public void GetProperiesByCategoryId_WithUnknownId_Throws()
+        public async Task GetProperiesByCategoryId_WithUnknownId_Throws()
         {
             var fake = CreateFakeRepository(new List<Category>());
 
-            Assert.Throws<Exception>(() => fake.GetProperiesByCategoryId(999));
+            await Assert.ThrowsAsync<Exception>(() => fake.GetProperiesByCategoryId(999));
         }
 
         private static CategoryApplication CreateFakeRepository(IEnumerable<Category> categories)
@@ -80,7 +80,7 @@ namespace Challenge.Test.Categories
                 _categories = new List<Category>(categories);
             }
 
-            public List<Category> GetList()
+            public async Task<List<Category>> GetListAsync()
             {
                 return _categories;
             }

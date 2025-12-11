@@ -12,8 +12,9 @@ namespace Challenge.Infraestructure.DataAccess.Categories
             _categories = LoadCategories();
         }
 
-        public List<Category> GetList()
+        public async Task<List<Category>> GetListAsync()
         {
+            // normally this would be an async call to a database
             return _categories;
         }
 
