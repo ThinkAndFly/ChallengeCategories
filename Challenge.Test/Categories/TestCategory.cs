@@ -16,8 +16,8 @@ namespace Challenge.Test.Categories
             {
                 new Category
                 {
-                    CaterogyId = 100,
-                    ParentCaterogyId = -1,
+                    CategoryId = 100,
+                    ParentCategoryId = -1,
                     Name = "Business",
                     Keyword = "Money"
                 }
@@ -37,15 +37,15 @@ namespace Challenge.Test.Categories
             {
                 new Category
                 {
-                    CaterogyId = 100,
-                    ParentCaterogyId = -1,
+                    CategoryId = 100,
+                    ParentCategoryId = -1,
                     Name = "Business",
                     Keyword = "Money"
                 },
                 new Category
                 {
-                    CaterogyId = 200,
-                    ParentCaterogyId = 100,
+                    CategoryId = 200,
+                    ParentCategoryId = 100,
                     Name = "Taxation",
                     Keyword = string.Empty
                 }

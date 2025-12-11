@@ -24,53 +24,53 @@ namespace Challenge.Infraestructure.DataAccess.Categories
             {
                 new Category
                 {
-                    CaterogyId = 100,
-                    ParentCaterogyId = -1,
+                    CategoryId = 100,
+                    ParentCategoryId = -1,
                     Name = "Business",
                     Keyword = "Money"
                 },
                 new Category
                 {
-                    CaterogyId = 200,
-                    ParentCaterogyId = -1,
+                    CategoryId = 200,
+                    ParentCategoryId = -1,
                     Name = "Tutoring",
                     Keyword = "Teaching"
                 },
                 new Category
                 {
-                    CaterogyId = 101,
-                    ParentCaterogyId = 100,
+                    CategoryId = 101,
+                    ParentCategoryId = 100,
                     Name = "Accounting",
                     Keyword = "Taxes"
                 },
                 new Category
                 {
-                    CaterogyId = 102,
-                    ParentCaterogyId = 100,
+                    CategoryId = 102,
+                    ParentCategoryId = 100,
                     Name = "Taxation"
                 },
                 new Category
                 {
-                    CaterogyId = 201,
-                    ParentCaterogyId = 200,
+                    CategoryId = 201,
+                    ParentCategoryId = 200,
                     Name = "Computer"
                 },
                 new Category
                 {
-                    CaterogyId = 103,
-                    ParentCaterogyId = 101,
+                    CategoryId = 103,
+                    ParentCategoryId = 101,
                     Name = "Corporate Tax"
                 },
                 new Category
                 {
-                    CaterogyId = 202,
-                    ParentCaterogyId = 201,
+                    CategoryId = 202,
+                    ParentCategoryId = 201,
                     Name = "Operating System"
                 },
                 new Category
                 {
-                    CaterogyId = 109,
-                    ParentCaterogyId = 101,
+                    CategoryId = 109,
+                    ParentCategoryId = 101,
                     Name = "Small Business Tax"
                 }
             };
