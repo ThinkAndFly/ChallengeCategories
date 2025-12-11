@@ -38,6 +38,8 @@ namespace Challenge.Application.Categories
             return map.TryGetValue(level, out var ids) ? ids : new List<int>();
         }
 
+
+
         private string FindKeyword(Category category, List<Category> Categories)
         {
             if (category is null)
