@@ -78,7 +78,7 @@ namespace Challenge.Application.Categories
             // Cache for storing computed levels, max size is number of categories
             var levelMapCache = new Dictionary<int, int>(categories.Count);
 
-            // Set to track categories currently being processed to prevent loops
+            // Set to track categories currently being processed to prevent loops. This is not necessary for the sample data, but if the data changes in the future it can help prevent infinite recursion.
             var processingCategory = new HashSet<int>();
 
             int GetLevel(int id)
