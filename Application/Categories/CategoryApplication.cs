@@ -104,7 +104,7 @@ namespace Challenge.Application.Categories
 
                 // Loop prevention
                 if (!processingCategory.Add(id))
-                    throw new InvalidOperationException($"Loop detected while computing depths.");
+                    throw new InvalidOperationException($"Loop detected while mapping the levels.");
 
                 // Recurse to compute parent's depth
                 var parentLevel = GetLevel(category.ParentCategoryId);
