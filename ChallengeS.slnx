@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Application/Challenge.Application.csproj" />
+  <Project Path="Challenge.DataAccess/Challenge.Infraestructure.csproj" />
+  <Project Path="Challenge.Test/Challenge.Test.csproj" />
+  <Project Path="ChallengeS/Challenge.Presentation.Console.csproj" />
+  <Project Path="Domain/Challenge.Domain.csproj" />
+</Solution>
